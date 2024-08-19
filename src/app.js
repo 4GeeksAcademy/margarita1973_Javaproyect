@@ -2,10 +2,39 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+window.onload = () => {
+  document.querySelector("#excuse").innerHTML = generadorexcusa();
+};
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+let generadorexcusa = () => {
+  let quien = ["El perro", "Mi abuela", "El cartero", "Mi conejo", "El vecino"];
+  let accion = ["se comió", "rompió", "chocó", "rompió", "se llevó"];
+  let que = [
+    "mi tarea",
+    "mi telefono",
+    "el auto",
+    "mi abrigo",
+    "mi computadora"
+  ];
+  let cuando = [
+    "antes de la clase",
+    "cuando estaba durmiendo",
+    "mientras hacia ejercicio",
+    "durante el almuerzo",
+    "cuando estaba rezando"
+  ];
+
+  let Numquien = Math.floor(Math.random() * quien.length);
+  let Numaccion = Math.floor(Math.random() * accion.length);
+  let Numque = Math.floor(Math.random() * que.length);
+  let Numcuando = Math.floor(Math.random() * quien.length);
+  return (
+    quien[Numquien] +
+    " " +
+    accion[Numaccion] +
+    " " +
+    que[Numque] +
+    " " +
+    cuando[Numcuando]
+  );
 };
